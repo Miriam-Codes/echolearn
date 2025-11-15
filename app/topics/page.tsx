@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// TOPIC LIST 
 export default function TopicsPage() {
   const topics = [
     { id: "arrays", name: "Arrays", desc: "Learn how data is stored in order." },
@@ -15,7 +16,7 @@ export default function TopicsPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {topics.map((topic) => (
           <Link
-            href={`/learn/${topic.id}`}
+            href={`/learn?topic=${topic.id}`}
             key={topic.id}
             className="block border p-4 rounded-md bg-white hover:bg-gray-100 transition"
           >
