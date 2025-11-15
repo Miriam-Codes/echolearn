@@ -1,10 +1,25 @@
 @import "tailwindcss";
 
+/* ============================
+   COLOR VARIABLES
+   ============================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand colors */
+  --echo-blue: #4ea3ff;
+  --echo-purple: #b084ff;
+  --echo-pink: #ff6ccc;
+  --echo-deep: #0b0f1a;
+
+  /* Cozy background */
+  --background: #1A0A1F;
+
+  /* Default text */
+  --foreground: #ffffff;
 }
 
+/* ============================
+   TAILWIND THEME HOOKS
+   ============================ */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +27,88 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* ============================
+   DARK MODE (optional-ish)
+   ============================ */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #ffffff;
   }
 }
 
+/* ============================
+   BODY STYLING
+   ============================ */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PixelGrid", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================
+   PIXELGRID (Display Fonts)
+   ============================ */
+@font-face {
+  font-family: "PixelGrid";
+  src: url("/fonts/PixelGridTrial-SquareBoldS.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PixelGrid";
+  src: url("/fonts/PixelGridTrial-SquareBoldM.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PixelGrid";
+  src: url("/fonts/PixelGridTrial-SquareBoldXL.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ============================
+   HACK (Monospace for code)
+   ============================ */
+@font-face {
+  font-family: "Hack";
+  src: url("/fonts/Hack-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ============================
+   MENLO (Fallback monospace)
+   ============================ */
+@font-face {
+  font-family: "Menlo";
+  src: url("/fonts/Menlo Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ============================
+   UTILITY FONT CLASSES
+   ============================ */
+.font-pixelgrid {
+  font-family: "PixelGrid", sans-serif !important;
+}
+
+.font-body {
+  font-family: "PixelGrid", sans-serif !important;
+}
+
+.font-code {
+  font-family: "Hack", "Menlo", monospace !important;
+}
+
+/* ============================
+   CRISP PIXELS
+   ============================ */
+.image-pixelated {
+  image-rendering: pixelated;
 }
