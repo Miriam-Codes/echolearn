@@ -29,7 +29,7 @@ export default function CoursesPage() {
       <section className="max-w-5xl mx-auto px-6 pb-20">
         <div className="flex flex-wrap gap-8 justify-start items-start">
           
-          {/* DSA */}
+          {/* INTRO TO DSA (ACTIVE) */}
           <Link href="/courses/dsa">
             <CourseCard
               number={1}
@@ -40,27 +40,27 @@ export default function CoursesPage() {
             />
           </Link>
 
-          {/* Arrays */}
-          <Link href="/courses/arrays">
+          {/* CORE DATA STRUCTURES — COMING SOON */}
+          <div className="opacity-60 cursor-not-allowed">
             <CourseCard
               number={2}
-              title="Arrays Fundamentals"
-              description="Learn how arrays work, memory layout, and traversal techniques."
-              difficulty="Beginner"
-              image="/course-imgs/arrays.png"
+              title="Core Data Structures"
+              description="Arrays, stacks, queues, linked lists, trees, and more."
+              difficulty="Intermediate"
+              image="/course-imgs/placeholder.png"
             />
-          </Link>
+          </div>
 
-          {/* Sorting */}
-          <Link href="/courses/sorting">
+          {/* ALGORITHM FOUNDATIONS — COMING SOON */}
+          <div className="opacity-60 cursor-not-allowed">
             <CourseCard
               number={3}
-              title="Sorting Algorithms"
-              description="Walk through bubble sort, merge sort, and more using pixel animations."
+              title="Algorithm Foundations"
+              description="Sorting, searching, recursion, and problem-solving patterns."
               difficulty="Intermediate"
-              image="/course-imgs/sort.png"
+              image="/course-imgs/placeholder.png"
             />
-          </Link>
+          </div>
 
         </div>
 

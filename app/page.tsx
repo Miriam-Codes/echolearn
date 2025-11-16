@@ -58,64 +58,51 @@ export default function HomePage() {
 
       {/* MAIN PAGE CONTENT */}
       <div className="px-4">
-        {/* HOW IT WORKS */}
-        <section className="mb-28">
-          <h2 className="font-pixelgrid text-4xl text-center text-white mb-3">
-            How It Works
-          </h2>
+     {/* HOW IT WORKS */}
+<section className="mb-28">
+  <h2 className="font-pixelgrid text-4xl text-center text-white mb-3">
+    How It Works
+  </h2>
 
-          <p className="font-body text-center text-gray-400 max-w-xl mx-auto mb-12">
-            A simple three-step learning loop that makes tough concepts easier.
-          </p>
+  <p className="font-body text-center text-gray-400 max-w-xl mx-auto mb-12">
+    A simple three-step learning loop that makes tough concepts easier.
+  </p>
 
-          <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
+  <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
 
-            {/* STEP 1 */}
-            <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
-              <div className="w-12 h-12 mb-4 mx-auto">
-                <img
-                  src="/icons/pixel-placeholder.png"
-                  alt=""
-                  className="w-full h-full object-contain"
-                  style={{ imageRendering: "pixelated" }}
-                />
-              </div>
+    {/* STEP 1 */}
+    <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
+      <div className="w-12 h-12 mb-4 mx-auto text-5xl flex items-center justify-center">
+        📚
+      </div>
 
-              <h3 className="font-pixelgrid text-xl text-white mb-2">Choose a Topic</h3>
-              <p className="font-body text-gray-400">Select a DSA concept to explore.</p>
-            </div>
+      <h3 className="font-pixelgrid text-xl text-white mb-2">Choose a Course</h3>
+      <p className="font-body text-gray-400">Select a DSA concept to explore.</p>
+    </div>
 
-            {/* STEP 2 */}
-            <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
-              <div className="w-12 h-12 mb-4 mx-auto">
-                <img
-                  src="/icons/pixel-placeholder.png"
-                  alt=""
-                  className="w-full h-full object-contain"
-                  style={{ imageRendering: "pixelated" }}
-                />
-              </div>
+    {/* STEP 2 */}
+    <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
+      <div className="w-12 h-12 mb-4 mx-auto text-5xl flex items-center justify-center">
+        🌱
+      </div>
 
-              <h3 className="font-pixelgrid text-xl text-white mb-2">Learn the Basics</h3>
-              <p className="font-body text-gray-400">Review simple, clean explanations.</p>
-            </div>
+      <h3 className="font-pixelgrid text-xl text-white mb-2">Learn the Basics</h3>
+      <p className="font-body text-gray-400">Review simple, clean explanations.</p>
+    </div>
 
-            {/* STEP 3 */}
-            <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
-              <div className="w-12 h-12 mb-4 mx-auto">
-                <img
-                  src="/icons/pixel-placeholder.png"
-                  alt=""
-                  className="w-full h-full object-contain"
-                  style={{ imageRendering: "pixelated" }}
-                />
-              </div>
+    {/* STEP 3 */}
+    <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
+      <div className="w-12 h-12 mb-4 mx-auto text-5xl flex items-center justify-center">
+        🤖
+      </div>
 
-              <h3 className="font-pixelgrid text-xl text-white mb-2">Teach the AI</h3>
-              <p className="font-body text-gray-400">Explain it back to reinforce memory.</p>
-            </div>
-          </div>
-        </section>
+      <h3 className="font-pixelgrid text-xl text-white mb-2">Teach the AI</h3>
+      <p className="font-body text-gray-400">Explain it back to reinforce memory.</p>
+    </div>
+
+  </div>
+</section>
+
 
         {/* COMING SOON */}
         <section className="mb-36">

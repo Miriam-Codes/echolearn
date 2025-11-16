@@ -1,6 +1,76 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+// All lesson keys from the DSA course
+const ALL_LESSON_KEYS = [
+  "arrays-what-is-an-array",
+  "arrays-indexing",
+  "arrays-memory-layout",
+  "arrays-insert-delete",
+  "stacks-what-is-a-stack",
+  "stacks-push-pop",
+  "stacks-applications",
+  "queues-basics",
+  "queues-circular",
+  "queues-deque",
+  "linked-lists-singly",
+  "linked-lists-doubly",
+  "linked-lists-operations",
+  "trees-binary",
+  "trees-traversals",
+  "trees-bst",
+  "graphs-representation",
+  "graphs-bfs",
+  "graphs-dfs",
+  "sorting-bubble",
+  "sorting-selection",
+  "sorting-merge",
+  "sorting-quick",
+  "searching-linear",
+  "searching-binary",
+];
 
 export default function DSACourseOverview() {
+  const [completedCount, setCompletedCount] = useState(0);
+  const totalLessons = ALL_LESSON_KEYS.length;
+
+  useEffect(() => {
+    // Check localStorage for completed lessons
+    const count = ALL_LESSON_KEYS.filter((key) => {
+      if (typeof window === "undefined") return false;
+      return localStorage.getItem(key) === "completed";
+    }).length;
+
+    setCompletedCount(count);
+
+    // Listen for storage changes (when lessons are completed)
+    const handleStorageChange = () => {
+      const newCount = ALL_LESSON_KEYS.filter((key) => {
+        return localStorage.getItem(key) === "completed";
+      }).length;
+      setCompletedCount(newCount);
+    };
+
+    // Check for completion updates periodically (since storage event only fires for other tabs)
+    const interval = setInterval(() => {
+      handleStorageChange();
+    }, 500); // Check every 500ms
+
+    // Also check on focus in case localStorage was updated
+    window.addEventListener("focus", handleStorageChange);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("focus", handleStorageChange);
+    };
+  }, []);
+
+  const progressPercentage = totalLessons > 0 
+    ? Math.round((completedCount / totalLessons) * 100) 
+    : 0;
+
   return (
     <div className="w-full min-h-screen bg-[#0f0f15] text-white">
 
@@ -131,16 +201,25 @@ export default function DSACourseOverview() {
           {/* Progress */}
           <div className="bg-[#1a1a22] border border-white/10 rounded-xl p-5">
             <h2 className="font-semibold text-lg">Course Progress</h2>
-            <p className="text-gray-400 text-sm mt-2">0 / 40 Lessons</p>
+            <p className="text-gray-400 text-sm mt-2">
+              {completedCount} / {totalLessons} Lessons
+            </p>
 
             <div className="w-full h-2 bg-[#2f2f38] rounded-full mt-3">
-              <div className="h-2 bg-pink-500 rounded-full" style={{ width: "0%" }} />
+              <div 
+                className="h-2 bg-pink-500 rounded-full transition-all duration-300" 
+                style={{ width: `${progressPercentage}%` }} 
+              />
             </div>
           </div>
 
           <div className="bg-[#1a1a22] border border-white/10 rounded-xl p-5">
+            <h2 className="font-semibold text-lg mb-2">Badges & Rewards</h2>
             <p className="text-gray-300 text-sm">
               Unlock badges as you complete each section ✨
+            </p>
+            <p className="text-gray-400 text-xs mt-2 italic">
+              Coming soon...
             </p>
           </div>
 
