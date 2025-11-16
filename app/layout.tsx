@@ -36,7 +36,7 @@ export default function RootLayout({
            {/* RIGHT SIDE — NAV LINKS */}
             <div className="flex items-center gap-6 text-sm">
               <Link href="/" className="hover:text-pink-300 transition">Home</Link>
-              <Link href="/topics" className="hover:text-pink-300 transition">Topics</Link>
+              <Link href="/courses" className="hover:text-pink-300 transition">Courses</Link>
               <Link href="/about" className="hover:text-pink-300 transition">About</Link>
             </div>
           </nav>

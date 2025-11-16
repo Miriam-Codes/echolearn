@@ -38,7 +38,7 @@ export default function HomePage() {
           </p>
 
           <a
-            href="/topics"
+            href="/courses"
             className="
               mt-10 
               px-8 py-3 
@@ -74,20 +74,47 @@ export default function HomePage() {
 
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
 
+            {/* STEP 1 */}
             <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
-              <div className="text-4xl mb-3">📘</div>
+              <div className="w-12 h-12 mb-4 mx-auto">
+                <img
+                  src="/icons/pixel-placeholder.png"
+                  alt=""
+                  className="w-full h-full object-contain"
+                  style={{ imageRendering: "pixelated" }}
+                />
+              </div>
+
               <h3 className="font-pixelgrid text-xl text-white mb-2">Choose a Topic</h3>
               <p className="font-body text-gray-400">Select a DSA concept to explore.</p>
             </div>
 
+            {/* STEP 2 */}
             <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
-              <div className="text-4xl mb-3">✨</div>
+              <div className="w-12 h-12 mb-4 mx-auto">
+                <img
+                  src="/icons/pixel-placeholder.png"
+                  alt=""
+                  className="w-full h-full object-contain"
+                  style={{ imageRendering: "pixelated" }}
+                />
+              </div>
+
               <h3 className="font-pixelgrid text-xl text-white mb-2">Learn the Basics</h3>
               <p className="font-body text-gray-400">Review simple, clean explanations.</p>
             </div>
 
+            {/* STEP 3 */}
             <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
-              <div className="text-4xl mb-3">🧠</div>
+              <div className="w-12 h-12 mb-4 mx-auto">
+                <img
+                  src="/icons/pixel-placeholder.png"
+                  alt=""
+                  className="w-full h-full object-contain"
+                  style={{ imageRendering: "pixelated" }}
+                />
+              </div>
+
               <h3 className="font-pixelgrid text-xl text-white mb-2">Teach the AI</h3>
               <p className="font-body text-gray-400">Explain it back to reinforce memory.</p>
             </div>
@@ -96,37 +123,41 @@ export default function HomePage() {
         </section>
 
 
+        {/* COMING SOON */}
         <section className="mb-36">
-  <h2 className="font-pixelgrid text-4xl text-center text-white mb-3">
-    Coming Soon
-  </h2>
+          <h2 className="font-pixelgrid text-4xl text-center text-white mb-3">
+            Coming Soon
+          </h2>
 
-  <p className="font-body text-center text-gray-400 max-w-xl mx-auto mb-12">
-    New interactive topics coming to EchoLearn soon.
-  </p>
+          <p className="font-body text-center text-gray-400 max-w-xl mx-auto mb-12">
+            New interactive topics coming to EchoLearn soon.
+          </p>
 
-  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-    
-    <CourseCard
-      label="Coming Soon"
-      title="Dynamic Programming"
-      description="Learn optimization patterns and memoization strategies."
-    />
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
 
-    <CourseCard
-      label="Coming Soon"
-      title="Greedy Algorithms"
-      description="Explore fast decision-making techniques for efficient solutions."
-    />
+            <CourseCard
+              title="Dynamic Programming"
+              description="Learn optimization patterns and memoization strategies."
+              difficulty="Advanced"
+              image="/icons/pixel-placeholder.png"
+            />
 
-    <CourseCard
-      label="Coming Soon"
-      title="Bit Manipulation"
-      description="Master binary tricks for powerful low-level problem solving."
-    />
+            <CourseCard
+              title="Greedy Algorithms"
+              description="Explore fast decision-making techniques for efficient solutions."
+              difficulty="Intermediate"
+              image="/icons/pixel-placeholder.png"
+            />
 
-  </div>
-</section>
+            <CourseCard
+              title="Bit Manipulation"
+              description="Master binary tricks for powerful low-level problem solving."
+              difficulty="Advanced"
+              image="/icons/pixel-placeholder.png"
+            />
+
+          </div>
+        </section>
 
       </div>
     </div>
