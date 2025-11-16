@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-// Predefined topics
+
 const validTopics = {
   arrays: "Arrays",
   stacks: "Stacks",
@@ -10,7 +10,6 @@ const validTopics = {
 
 type Topic = keyof typeof validTopics;
 
-// Absolute fetch (required for server components)
 async function getLesson(topic: Topic) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
@@ -32,7 +31,7 @@ export default async function LearnPage({
 }) {
   const topicParam = params.topic;
 
-  // Validate param
+
   if (!(topicParam in validTopics)) {
     notFound();
   }

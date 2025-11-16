@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-// TOPIC LIST 
+ 
 export default function TopicsPage() {
   const topics = [
     { id: "arrays", name: "Arrays", desc: "Learn how data is stored in order." },

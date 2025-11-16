@@ -5,7 +5,7 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Fetch clone XP + level (single-row table)
+// Fetch clone XP and level (single-row table)
 export async function getCloneProgress() {
   const { data, error } = await supabase
     .from("clone_progress")
@@ -21,7 +21,7 @@ export async function getCloneProgress() {
   return data;
 }
 
-// Update XP + level after teaching
+// Update XP and level after teaching
 export async function updateCloneProgress(totalXp: number, level: number) {
   const { data, error } = await supabase
     .from("clone_progress")
