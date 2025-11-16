@@ -9,7 +9,7 @@ export default function BinaryTreePage() {
       previousLesson="/courses/dsa/linked-lists/operations"
       topicBanner="/topics/trees/trees.png"
     >
-      <div>
+      <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>
         <p>
           A binary tree is a tree data structure where each node has at most two
@@ -30,11 +30,13 @@ export default function BinaryTreePage() {
         <p>
           Each node typically stores data and pointers to its left and right
           children. A node with no children has both pointers set to null. This
-          simple structure allows recursive algorithms to process entire subtrees
-          elegantly.
+          simple structure allows recursive algorithms to process entire
+          subtrees elegantly.
         </p>
 
-        <h2 className="text-xl font-semibold text-purple-200">Properties of Binary Trees</h2>
+        <h2 className="text-xl font-semibold text-purple-200">
+          Properties of Binary Trees
+        </h2>
         <p>
           In a full binary tree, every node has either zero or two children. A
           complete binary tree has all levels fully filled except possibly the
@@ -42,15 +44,16 @@ export default function BinaryTreePage() {
           equal depths on both sides.
         </p>
 
-        <h2 className="text-xl font-semibold text-purple-200">Why Binary Trees Matter</h2>
+        <h2 className="text-xl font-semibold text-purple-200">
+          Why Binary Trees Matter
+        </h2>
         <p>
           Binary trees form the foundation for more advanced structures like
-          binary search trees and heaps. They enable efficient hierarchical
-          data organization and support operations like searching, insertion,
-          and deletion in logarithmic time under ideal conditions.
+          binary search trees and heaps. They enable efficient hierarchical data
+          organization and support operations like searching, insertion, and
+          deletion in logarithmic time under ideal conditions.
         </p>
-      </div>
+      </>
     </LessonLayout>
   );
 }
-
