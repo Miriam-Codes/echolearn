@@ -25,13 +25,36 @@ export default function LessonLayout({
   const [aiPanel, setAiPanel] = useState<null | "teacher" | "baby">(null);
   const bannerImage = topicBanner || "/bg/default-lesson.png";
 
+  // ⭐ NEW — holds the clone's level so Baby AI can evolve
+  const [cloneLevel, setCloneLevel] = useState(1);
+
   useEffect(() => {
-    const saved = typeof window !== "undefined"
-      ? localStorage.getItem(lessonKey)
-      : null;
+    const saved =
+      typeof window !== "undefined" ? localStorage.getItem(lessonKey) : null;
 
     if (saved === "completed") setCompleted(true);
   }, [lessonKey]);
+
+  // ⭐ NEW — load clone level from backend
+  useEffect(() => {
+    async function loadProfile() {
+      try {
+        const userId = localStorage.getItem("userId");
+        if (!userId) return;
+
+        const res = await fetch(`/api/profile?userId=${userId}`);
+        const data = await res.json();
+
+        if (data?.clone?.level !== undefined) {
+          setCloneLevel(data.clone.level);
+        }
+      } catch (err) {
+        console.error("Failed to load clone profile:", err);
+      }
+    }
+
+    loadProfile();
+  }, []);
 
   function markComplete() {
     setCompleted(true);
@@ -42,12 +65,11 @@ export default function LessonLayout({
 
   return (
     <div className="relative min-h-screen bg-[#070511] text-gray-200">
-
       {/* FLOATING PARTICLES */}
       <div
         className="
-          pointer-events-none 
-          fixed inset-0 -z-10 
+          pointer-events-none
+          fixed inset-0 -z-10
           bg-[radial-gradient(circle_at_top,_rgba(255,182,193,0.12),transparent_55%),radial-gradient(circle_at_bottom,_rgba(147,112,219,0.18),transparent_55%)]
         "
       />
@@ -55,7 +77,6 @@ export default function LessonLayout({
       {/* FULL-WIDTH TOP BANNER */}
       <div className="w-full mt-10">
         <div className="relative w-full h-56 sm:h-64 lg:h-72 overflow-hidden border-y border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
-
           <img
             src={bannerImage}
             alt={title}
@@ -63,10 +84,8 @@ export default function LessonLayout({
             style={{ imageRendering: "pixelated" }}
           />
 
-          {/* SOFT FADE INTO PAGE */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#070511]" />
 
-          {/* TITLE ON BANNER */}
           <div className="absolute bottom-6 left-6">
             <p className="text-xs uppercase tracking-[0.2em] text-pink-200/80">
               LESSON CONTENT
@@ -81,18 +100,16 @@ export default function LessonLayout({
       {/* MAIN LESSON CONTENT */}
       <div className="max-w-4xl mx-auto px-6 pb-24 mt-14">
         <div className="bg-[#130f1f]/90 border border-white/10 rounded-2xl p-7 sm:p-9 shadow-[0_18px_45px_rgba(0,0,0,0.7)] backdrop-blur-sm">
-
           <div className="font-body text-[15px] text-gray-200/90 leading-relaxed space-y-6 mb-10">
             {children}
           </div>
 
-          {/* COMPLETE BUTTON */}
           {!completed ? (
             <button
               onClick={markComplete}
               className="
-                bg-pink-500 hover:bg-pink-600 
-                text-white font-semibold px-6 py-3 
+                bg-pink-500 hover:bg-pink-600
+                text-white font-semibold px-6 py-3
                 rounded-lg transition shadow-[0_0_18px_rgba(255,108,204,0.6)]
               "
             >
@@ -104,14 +121,13 @@ export default function LessonLayout({
             </div>
           )}
 
-          {/* BABY AI */}
           {completed && (
             <button
               onClick={() => setAiPanel("baby")}
               className="
-                block mt-3 text-sm 
-                text-pink-200 hover:text-pink-300 
-                underline decoration-pink-300/70 
+                block mt-3 text-sm
+                text-pink-200 hover:text-pink-300
+                underline decoration-pink-300/70
                 underline-offset-4
               "
             >
@@ -119,16 +135,19 @@ export default function LessonLayout({
             </button>
           )}
 
-          {/* NAVIGATION */}
           <div className="flex justify-between mt-14 font-body text-sm text-pink-200/90">
             {previousLesson ? (
-              <a href={previousLesson} className="hover:text-pink-300 transition">← Previous</a>
+              <a href={previousLesson} className="hover:text-pink-300 transition">
+                ← Previous
+              </a>
             ) : (
               <span />
             )}
 
             {nextLesson && (
-              <a href={nextLesson} className="hover:text-pink-300 transition">Next →</a>
+              <a href={nextLesson} className="hover:text-pink-300 transition">
+                Next →
+              </a>
             )}
           </div>
         </div>
@@ -139,24 +158,24 @@ export default function LessonLayout({
         type="button"
         onClick={() => setAiPanel("teacher")}
         className="
-          fixed bottom-6 right-6 z-40 
+          fixed bottom-6 right-6 z-40
           flex flex-col items-center gap-1 group
         "
       >
         <div
           className="
-            relative w-14 h-14 rounded-full 
-            bg-[#24142f] 
-            border border-pink-300/60 
+            relative w-14 h-14 rounded-full
+            bg-[#24142f]
+            border border-pink-300/60
             shadow-[0_0_20px_rgba(255,108,204,0.7)]
             flex items-center justify-center
-            group-hover:scale-105 
+            group-hover:scale-105
             group-hover:shadow-[0_0_28px_rgba(255,108,204,0.95)]
             transition
           "
         >
           <img
-            src="/characters/teacher-bot.png"
+            src="/avatars/teacher.png"
             alt="Teacher AI bot"
             className="w-9 h-9 object-contain"
             style={{ imageRendering: "pixelated" }}
@@ -166,8 +185,8 @@ export default function LessonLayout({
 
         <span
           className="
-            text-[11px] px-3 py-1 rounded-full 
-            bg-[#24142f]/95 border border-pink-300/40 
+            text-[11px] px-3 py-1 rounded-full
+            bg-[#24142f]/95 border border-pink-300/40
             text-pink-100 shadow-[0_0_12px_rgba(0,0,0,0.7)]
           "
         >
@@ -178,8 +197,10 @@ export default function LessonLayout({
       {/* AI PANEL */}
       <AISidePanel
         open={aiPanel !== null}
+        lessonKey={lessonKey}
         mode={aiPanel === "baby" ? "baby" : "teacher"}
         onClose={() => setAiPanel(null)}
+        cloneLevel={cloneLevel}
       />
     </div>
   );

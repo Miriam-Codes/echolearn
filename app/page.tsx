@@ -133,21 +133,21 @@ export default function HomePage() {
               title="Dynamic Programming"
               description="Learn optimization patterns and memoization strategies."
               difficulty="Advanced"
-              image="/icons/pixel-placeholder.png"
+              image="/course-imgs/dynamic-programming.png"
             />
 
             <CourseCard
               title="Greedy Algorithms"
               description="Explore fast decision-making techniques for efficient solutions."
               difficulty="Intermediate"
-              image="/icons/pixel-placeholder.png"
+              image="/course-imgs/greedy-algorithms.png"
             />
 
             <CourseCard
               title="Bit Manipulation"
               description="Master binary tricks for powerful low-level problem solving."
               difficulty="Advanced"
-              image="/icons/pixel-placeholder.png"
+              image="/course-imgs/bit-manipulation.png"
             />
 
           </div>
