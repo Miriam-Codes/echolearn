@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import ProgressBar from "@/components/ProgressBar";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BabyPage() {
   const params = useSearchParams();
@@ -28,36 +29,54 @@ export default function BabyPage() {
   }
 
   return (
-    <div className="max-w-xl mx-auto p-6 space-y-4">
-      <h1 className="text-2xl font-bold">Baby AI: Teach Me Bubble Sort</h1>
-      <ProgressBar xp={xp} />
-      <p className="text-gray-700">
-        Explain bubble sort in your own words. If I understand, I evolve!
-      </p>
-      <textarea
-        value={explanation}
-        onChange={(e) => setExplanation(e.target.value)}
-        className="border rounded px-3 py-2 w-full h-32"
-        placeholder="Bubble sort compares adjacent items, swaps if out of order..."
-      />
-      <button
-        onClick={() => evaluateExplanation(explanation)}
-        className="bg-black text-white px-4 py-2 rounded"
-      >
-        Teach
-      </button>
-      {reaction && <div className="p-3 bg-gray-100 rounded">{reaction}</div>}
-      <div className="flex gap-4">
-        <Link href="/topics">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded">
-            Continue with another topic
+    <div
+      className="space-y-6 p-2 flex"
+      style={{
+        backgroundImage: "url('/bg/tileable-sky.png')",
+        backgroundRepeat: "repeat-x",
+        backgroundSize: "auto 100%",
+        imageRendering: "pixelated",
+      }}
+    >
+      <div className="p-4 mx-auto">
+        <ProgressBar xp={xp} />
+        <div className="flex justify-center">
+          <Image
+            src="/baby.png"
+            alt="Baby character"
+            width={200}
+            height={200}
+            className="w-1/2 h-auto"
+          />
+        </div>
+        <p className="text-gray-700">
+          Explain bubble sort in your own words. If I understand, I evolve!
+        </p>
+        <textarea
+          value={explanation}
+          onChange={(e) => setExplanation(e.target.value)}
+          className="border rounded px-3 py-2 w-full h-32"
+          placeholder="Bubble sort compares adjacent items, swaps if out of order..."
+        />
+        <div className="flex gap-2">
+          <Link
+            href={{
+              pathname: "/learn",
+              query: { topic: "array-bubble", xp },
+            }}
+          >
+            <button className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-3 rounded font-pixelgrid">
+              Back to Learn More
+            </button>
+          </Link>
+          <button
+            onClick={() => evaluateExplanation(explanation)}
+            className="bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded font-pixelgrid"
+          >
+            Teach me
           </button>
-        </Link>
-        <Link href="/">
-          <button className="bg-gray-500 text-white px-4 py-2 rounded">
-            Back to Dashboard
-          </button>
-        </Link>
+        </div>
+        {reaction && <div className="p-3 bg-gray-100 rounded">{reaction}</div>}
       </div>
     </div>
   );
