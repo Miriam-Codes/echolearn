@@ -7,7 +7,7 @@ export default function DFSPage() {
       lessonKey="graphs-dfs"
       nextLesson="/courses/dsa/sorting/bubble"
       previousLesson="/courses/dsa/graphs/bfs"
-      topicBanner="/images/banners/graphs-banner.png"
+      topicBanner="/topics/graphs/graphs.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

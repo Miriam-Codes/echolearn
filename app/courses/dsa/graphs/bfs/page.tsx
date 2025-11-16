@@ -7,7 +7,7 @@ export default function BFSPage() {
       lessonKey="graphs-bfs"
       nextLesson="/courses/dsa/graphs/dfs"
       previousLesson="/courses/dsa/graphs/representation"
-      topicBanner="/images/banners/graphs-banner.png"
+      topicBanner="/topics/graphs/graphs.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

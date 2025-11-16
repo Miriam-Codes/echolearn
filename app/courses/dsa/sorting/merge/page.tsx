@@ -7,7 +7,7 @@ export default function MergeSortPage() {
       lessonKey="sorting-merge"
       nextLesson="/courses/dsa/sorting/quick"
       previousLesson="/courses/dsa/sorting/selection"
-      topicBanner="/images/banners/sorting-banner.png"
+      topicBanner="/topics/sorting/sorting.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

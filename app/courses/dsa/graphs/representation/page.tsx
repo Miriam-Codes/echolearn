@@ -7,7 +7,7 @@ export default function GraphRepresentationPage() {
       lessonKey="graphs-representation"
       nextLesson="/courses/dsa/graphs/bfs"
       previousLesson="/courses/dsa/trees/bst"
-      topicBanner="/images/banners/graphs-banner.png"
+      topicBanner="/topics/graphs/graphs.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

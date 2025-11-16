@@ -7,7 +7,7 @@ export default function QueueBasicsPage() {
       lessonKey="queues-basics"
       nextLesson="/courses/dsa/queues/circular"
       previousLesson="/courses/dsa/stacks/applications"
-      topicBanner="/images/banners/queues-banner.png"
+      topicBanner="/topics/queues/queues.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

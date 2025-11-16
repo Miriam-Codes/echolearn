@@ -7,7 +7,7 @@ export default function CircularQueuePage() {
       lessonKey="queues-circular"
       nextLesson="/courses/dsa/queues/deque"
       previousLesson="/courses/dsa/queues/basics"
-      topicBanner="/images/banners/queues-banner.png"
+      topicBanner="/topics/queues/queues.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

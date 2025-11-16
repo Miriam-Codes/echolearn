@@ -7,7 +7,7 @@ export default function LinkedListOperationsPage() {
       lessonKey="linked-lists-operations"
       nextLesson="/courses/dsa/trees/binary"
       previousLesson="/courses/dsa/linked-lists/doubly"
-      topicBanner="/images/banners/linked-lists-banner.png"
+      topicBanner="/topics/linked-lists/linked-lists.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

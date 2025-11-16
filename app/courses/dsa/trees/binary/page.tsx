@@ -7,9 +7,9 @@ export default function BinaryTreePage() {
       lessonKey="trees-binary"
       nextLesson="/courses/dsa/trees/traversals"
       previousLesson="/courses/dsa/linked-lists/operations"
-      topicBanner="/images/banners/trees-banner.png"
+      topicBanner="/topics/trees/trees.png"
     >
-      <>
+      <div>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>
         <p>
           A binary tree is a tree data structure where each node has at most two
@@ -49,7 +49,7 @@ export default function BinaryTreePage() {
           data organization and support operations like searching, insertion,
           and deletion in logarithmic time under ideal conditions.
         </p>
-      </>
+      </div>
     </LessonLayout>
   );
 }

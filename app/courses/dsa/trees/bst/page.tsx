@@ -7,7 +7,7 @@ export default function BinarySearchTreePage() {
       lessonKey="trees-bst"
       nextLesson="/courses/dsa/graphs/representation"
       previousLesson="/courses/dsa/trees/traversals"
-      topicBanner="/images/banners/trees-banner.png"
+      topicBanner="/topics/trees/trees.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

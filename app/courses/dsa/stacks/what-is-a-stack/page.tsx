@@ -7,7 +7,7 @@ export default function WhatIsAStackPage() {
       lessonKey="stacks-what-is-a-stack"
       nextLesson="/courses/dsa/stacks/push-pop"
       previousLesson="/courses/dsa/arrays/operations"
-      topicBanner="/images/banners/stacks-banner.png"
+      topicBanner="/topics/stacks/stacks.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

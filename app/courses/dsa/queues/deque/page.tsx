@@ -7,7 +7,7 @@ export default function DequePage() {
       lessonKey="queues-deque"
       nextLesson="/courses/dsa/linked-lists/singly"
       previousLesson="/courses/dsa/queues/circular"
-      topicBanner="/images/banners/queues-banner.png"
+      topicBanner="/topics/queues/queues.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

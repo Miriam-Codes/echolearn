@@ -7,7 +7,7 @@ export default function SelectionSortPage() {
       lessonKey="sorting-selection"
       nextLesson="/courses/dsa/sorting/merge"
       previousLesson="/courses/dsa/sorting/bubble"
-      topicBanner="/images/banners/sorting-banner.png"
+      topicBanner="/topics/sorting/sorting.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

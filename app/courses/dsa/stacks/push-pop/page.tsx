@@ -7,7 +7,7 @@ export default function PushPopPage() {
       lessonKey="stacks-push-pop"
       nextLesson="/courses/dsa/stacks/applications"
       previousLesson="/courses/dsa/stacks/what-is-a-stack"
-      topicBanner="/images/banners/stacks-banner.png"
+      topicBanner="/topics/stacks/stacks.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

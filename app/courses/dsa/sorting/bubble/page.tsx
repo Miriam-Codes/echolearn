@@ -7,7 +7,7 @@ export default function BubbleSortPage() {
       lessonKey="sorting-bubble"
       nextLesson="/courses/dsa/sorting/selection"
       previousLesson="/courses/dsa/graphs/dfs"
-      topicBanner="/images/banners/sorting-banner.png"
+      topicBanner="/topics/sorting/sorting.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

@@ -7,7 +7,7 @@ export default function DoublyLinkedListPage() {
       lessonKey="linked-lists-doubly"
       nextLesson="/courses/dsa/linked-lists/operations"
       previousLesson="/courses/dsa/linked-lists/singly"
-      topicBanner="/images/banners/linked-lists-banner.png"
+      topicBanner="/topics/linked-lists/linked-lists.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

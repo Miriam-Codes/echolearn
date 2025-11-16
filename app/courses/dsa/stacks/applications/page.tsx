@@ -7,7 +7,7 @@ export default function StackApplicationsPage() {
       lessonKey="stacks-applications"
       nextLesson="/courses/dsa/queues/basics"
       previousLesson="/courses/dsa/stacks/push-pop"
-      topicBanner="/images/banners/stacks-banner.png"
+      topicBanner="/topics/stacks/stacks.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

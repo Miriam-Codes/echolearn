@@ -7,7 +7,7 @@ export default function QuickSortPage() {
       lessonKey="sorting-quick"
       nextLesson="/courses/dsa/searching/linear"
       previousLesson="/courses/dsa/sorting/merge"
-      topicBanner="/images/banners/sorting-banner.png"
+      topicBanner="/topics/sorting/sorting.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

@@ -7,7 +7,7 @@ export default function SinglyLinkedListPage() {
       lessonKey="linked-lists-singly"
       nextLesson="/courses/dsa/linked-lists/doubly"
       previousLesson="/courses/dsa/queues/deque"
-      topicBanner="/images/banners/linked-lists-banner.png"
+      topicBanner="/topics/linked-lists/linked-lists.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>

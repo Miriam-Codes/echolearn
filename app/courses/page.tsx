@@ -47,7 +47,7 @@ export default function CoursesPage() {
               title="Core Data Structures"
               description="Arrays, stacks, queues, linked lists, trees, and more."
               difficulty="Intermediate"
-              image="/course-imgs/placeholder.png"
+              image="/course-imgs/core-data-structures.png"
             />
           </div>
 
@@ -58,7 +58,7 @@ export default function CoursesPage() {
               title="Algorithm Foundations"
               description="Sorting, searching, recursion, and problem-solving patterns."
               difficulty="Intermediate"
-              image="/course-imgs/placeholder.png"
+              image="/course-imgs/algorithm-foundations.png"
             />
           </div>
 

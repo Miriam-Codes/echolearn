@@ -7,7 +7,7 @@ export default function LinearSearchPage() {
       lessonKey="searching-linear"
       nextLesson="/courses/dsa/searching/binary"
       previousLesson="/courses/dsa/sorting/quick"
-      topicBanner="/images/banners/searching-banner.png"
+      topicBanner="/topics/searching/searching.png"
     >
       <>
         <h2 className="text-xl font-semibold text-purple-200">Overview</h2>
