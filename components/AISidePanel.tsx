@@ -7,6 +7,7 @@ export default function AISidePanel({
   onClose,
   mode,
   lessonKey,
+  cloneLevel,
 }: {
   open: boolean;
   onClose: () => void;
@@ -14,7 +15,7 @@ export default function AISidePanel({
   lessonKey: string;
   cloneLevel: number;
 }) {
-  // Separate history states
+  // separate histories
   const [teacherMessages, setTeacherMessages] = useState<
     { role: "user" | "ai"; content: string }[]
   >([]);
@@ -30,19 +31,17 @@ export default function AISidePanel({
 
   const isTeacher = mode === "teacher";
 
-  // Avatars – replace with your own images
-  const teacherAvatar = "/avatars/teacher.png"; // replace with your PNG
-  const babyAvatar = "/avatars/baby.png";       // replace with your PNG
+  const teacherAvatar = "/avatars/teacher.png";
+  const babyAvatar = "/avatars/baby.png";
 
   const avatar = isTeacher ? teacherAvatar : babyAvatar;
 
-  // choose the correct history + setter
   const messages = isTeacher ? teacherMessages : babyMessages;
   const setMessages = isTeacher ? setTeacherMessages : setBabyMessages;
 
   const intro = isTeacher
-    ? "Hi! I'm your Teacher AI. Ask me anything about this lesson!"
-    : "Hi! I'm your Baby AI. Teach me what you learned and I'll try to repeat it!";
+    ? "Hi! I'm your Teacher AI. Ask me anything about this lesson."
+    : "Hi! I'm your Baby AI. Teach me something you learned.";
 
   const starterPrompts = isTeacher
     ? [
@@ -51,12 +50,12 @@ export default function AISidePanel({
         "Give me a real-world example",
       ]
     : [
-        "Here’s what I learned…",
-        "Let me explain this topic!",
+        "Here’s what I learned...",
+        "Let me explain this topic.",
         "Can you repeat what I told you?",
       ];
 
-  // ----------- AI CALL ----------- //
+  // ------------ AI CALL ------------ //
   async function handleAI(message: string) {
     setLoading(true);
 
@@ -67,13 +66,13 @@ export default function AISidePanel({
         lessonKey,
         mode,
         message,
+        cloneLevel, // <<<<<< IMPORTANT
       }),
     });
 
     const data = await res.json();
 
-    const finalText =
-      data.ai || "Sorry, I couldn't generate a response.";
+    const finalText = data.ai || "Sorry, I couldn't generate a response.";
 
     setMessages((prev) => [...prev, { role: "ai", content: finalText }]);
     setLoading(false);
@@ -82,7 +81,7 @@ export default function AISidePanel({
   function send() {
     if (!input.trim()) return;
 
-    const msg = input;
+    const msg = input.trim();
 
     setMessages((prev) => [...prev, { role: "user", content: msg }]);
     setInput("");
@@ -92,15 +91,15 @@ export default function AISidePanel({
 
   return (
     <div className="fixed inset-0 z-[999] flex justify-end">
-      {/* Backdrop */}
+      {/* backdrop */}
       <div
         onClick={onClose}
         className="absolute inset-0 bg-black/30 backdrop-blur-sm"
       />
 
-      {/* Panel */}
+      {/* panel */}
       <div className="relative w-[420px] h-full bg-[#1a1a22] border-l border-pink-300/20 flex flex-col p-6">
-        {/* Header */}
+        {/* header */}
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-3">
             <img
@@ -123,7 +122,7 @@ export default function AISidePanel({
 
         <p className="text-gray-300 text-sm mb-4">{intro}</p>
 
-        {/* Starter prompts */}
+        {/* starter prompts */}
         <div className="space-y-2 mb-6">
           {starterPrompts.map((p, i) => (
             <button
@@ -136,14 +135,13 @@ export default function AISidePanel({
           ))}
         </div>
 
-        {/* Messages */}
+        {/* messages */}
         <div className="flex-1 overflow-y-auto bg-black/20 rounded-lg p-4 mb-4 border border-white/5">
           {messages.length === 0 ? (
             <p className="text-gray-500 text-sm">Start a chat.</p>
           ) : (
             messages.map((msg, i) => (
               <div key={i} className="mb-4 flex gap-3 items-start">
-                {/* Avatar for AI messages */}
                 {msg.role === "ai" ? (
                   <img
                     src={avatar}
@@ -171,7 +169,6 @@ export default function AISidePanel({
             ))
           )}
 
-          {/* Typing indicator */}
           {loading && (
             <div className="flex items-center gap-2 text-pink-300 text-sm mt-2">
               <img
@@ -183,7 +180,7 @@ export default function AISidePanel({
           )}
         </div>
 
-        {/* Input */}
+        {/* input */}
         <div className="flex gap-2">
           <input
             value={input}
