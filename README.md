@@ -7,7 +7,7 @@ EchoLearn is a cozy, pixel-themed learning platform built around one core idea: 
 ## Features
 
 * **Teach-to-Learn Engine** — Explain topics to an AI that behaves like a curious student.
-* **Interactive Pixel-Themed Lessons** — Cozy, Stardew-Valley-inspired UI with beginner-friendly explanations.
+* **Interactive Pixel-Themed Lessons** — Cozy, Stardew-Valley-inspired UI with beginner‑friendly explanations.
 * **Two AI Modes** — Teacher mode (challenges you) and Baby mode (simplifies concepts).
 * **Progress Tracking** — Lessons track completion using localStorage.
 * **Modular Lesson Layout** — Easily add new DSA topics.
@@ -51,14 +51,14 @@ EchoLearn was inspired by the Feynman Technique: when you teach a concept simply
 
 * Next.js server/client patterns
 * Prompt engineering
-* Pixel-art-friendly UI design
+* Pixel‑art‑friendly UI design
 * Stronger understanding of CS fundamentals
 
 ## What’s Next for EchoLearn
 
-* User accounts + cloud-backed progress
-* Quizzes, challenges, mini-projects
-* Teach-me-back mode
+* User accounts + cloud‑backed progress
+* Quizzes, challenges, mini‑projects
+* Teach‑me‑back mode
 * Community lesson packs
 * Expanded topics: recursion, graphs, DP, OOP
 
@@ -70,6 +70,10 @@ npm run dev
 npm run build
 npm run export
 ```
+
+## AI Assistance
+
+Some code snippets, lesson wording, and pixel art assets were generated or refined with the help of AI tools to accelerate development and maintain consistency.
 
 ## License
 
