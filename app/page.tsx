@@ -1,10 +1,8 @@
-import Link from "next/link";
 import CourseCard from "@/components/CourseCard";
 
 export default function HomePage() {
   return (
     <div className="text-gray-200 w-full">
-
       {/* FULL WIDTH HERO SECTION */}
       <section
         className="
@@ -21,10 +19,10 @@ export default function HomePage() {
         }}
       >
         {/* TOP GRADIENT */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-black/10 to-transparent pointer-events-none"></div>
 
         {/* BOTTOM FADER INTO PAGE THEME */}
-        <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-b from-transparent to-[var(--background)] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-44 bg-linear-to-b from-transparent to-[var(--background)] pointer-events-none"></div>
 
         {/* HERO CONTENT */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
@@ -33,8 +31,8 @@ export default function HomePage() {
           </h1>
 
           <p className="font-body text-gray-100 text-lg sm:text-xl max-w-2xl mt-6 leading-relaxed drop-shadow">
-            Learn better by teaching an AI clone. Pick a topic, guide the lesson,
-            and reinforce your understanding by explaining it back.
+            Learn better by teaching an AI clone. Pick a topic, guide the
+            lesson, and reinforce your understanding by explaining it back.
           </p>
 
           <a
@@ -58,10 +56,8 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* MAIN PAGE CONTENT */}
       <div className="px-4">
-
         {/* HOW IT WORKS */}
         <section className="mb-28">
           <h2 className="font-pixelgrid text-4xl text-center text-white mb-3">
@@ -73,61 +69,70 @@ export default function HomePage() {
           </p>
 
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
-
             <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
               <div className="text-4xl mb-3">📘</div>
-              <h3 className="font-pixelgrid text-xl text-white mb-2">Choose a Topic</h3>
-              <p className="font-body text-gray-400">Select a DSA concept to explore.</p>
+              <h3 className="font-pixelgrid text-xl text-white mb-2">
+                Choose a Topic
+              </h3>
+              <p className="font-body text-gray-400">
+                Select a DSA concept to explore.
+              </p>
             </div>
 
             <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
               <div className="text-4xl mb-3">✨</div>
-              <h3 className="font-pixelgrid text-xl text-white mb-2">Learn the Basics</h3>
-              <p className="font-body text-gray-400">Review simple, clean explanations.</p>
+              <h3 className="font-pixelgrid text-xl text-white mb-2">
+                Learn the Basics
+              </h3>
+              <p className="font-body text-gray-400">
+                Review simple, clean explanations.
+              </p>
             </div>
 
             <div className="bg-[#1a1a22] p-8 rounded-xl border border-white/10 shadow-lg hover:-translate-y-1 transition">
               <div className="text-4xl mb-3">🧠</div>
-              <h3 className="font-pixelgrid text-xl text-white mb-2">Teach the AI</h3>
-              <p className="font-body text-gray-400">Explain it back to reinforce memory.</p>
+              <h3 className="font-pixelgrid text-xl text-white mb-2">
+                Teach the AI
+              </h3>
+              <p className="font-body text-gray-400">
+                Explain it back to reinforce memory.
+              </p>
             </div>
-
           </div>
         </section>
 
-
         <section className="mb-36">
-  <h2 className="font-pixelgrid text-4xl text-center text-white mb-3">
-    Coming Soon
-  </h2>
+          <h2 className="font-pixelgrid text-4xl text-center text-white mb-3">
+            Coming Soon
+          </h2>
 
-  <p className="font-body text-center text-gray-400 max-w-xl mx-auto mb-12">
-    New interactive topics coming to EchoLearn soon.
-  </p>
+          <p className="font-body text-center text-gray-400 max-w-xl mx-auto mb-12">
+            New interactive topics coming to EchoLearn soon.
+          </p>
 
-  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-    
-    <CourseCard
-      label="Coming Soon"
-      title="Dynamic Programming"
-      description="Learn optimization patterns and memoization strategies."
-    />
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+            <CourseCard
+              href={``}
+              label="Coming Soon"
+              title="Dynamic Programming"
+              description="Learn optimization patterns and memoization strategies."
+            />
 
-    <CourseCard
-      label="Coming Soon"
-      title="Greedy Algorithms"
-      description="Explore fast decision-making techniques for efficient solutions."
-    />
+            <CourseCard
+            href={``}
+              label="Coming Soon"
+              title="Greedy Algorithms"
+              description="Explore fast decision-making techniques for efficient solutions."
+            />
 
-    <CourseCard
-      label="Coming Soon"
-      title="Bit Manipulation"
-      description="Master binary tricks for powerful low-level problem solving."
-    />
-
-  </div>
-</section>
-
+            <CourseCard
+            href={``}
+              label="Coming Soon"
+              title="Bit Manipulation"
+              description="Master binary tricks for powerful low-level problem solving."
+            />
+          </div>
+        </section>
       </div>
     </div>
   );
