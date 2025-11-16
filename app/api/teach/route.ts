@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { teachController } from '@/src/controllers/teach.controller';
 import { ValidationError } from '@/src/utils/validators';
 
+"use client";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();

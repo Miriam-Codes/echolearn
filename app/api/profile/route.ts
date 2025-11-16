@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { profileController, ProfileControllerError } from '@/src/controllers/profile.controller';
+export const dynamic = 'force-dynamic';
 
 export async function GET(req: Request) {
   try {
